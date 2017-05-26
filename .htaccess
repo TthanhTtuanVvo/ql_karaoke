@@ -1,0 +1,83 @@
+FileETag none
+
+RewriteEngine On
+
+ErrorDocument 404 /404.php
+ErrorDocument 401 /404.php
+ErrorDocument 403 /404.php
+ErrorDocument 500 /404.php
+
+RewriteRule ^home/									?act=home [L]
+
+RewriteRule ^gioi-thieu.html					    	?act=about [L]
+
+RewriteRule ^lien-he.html					    			?act=lien_he [L]
+
+RewriteRule ^tin-tuc-xem/(.*)					    ?act=tin_tuc_xem&id=$1 [L]
+RewriteRule ^tin-tuc-xem/					    	?act=tin_tuc_xem [L]
+
+RewriteRule ^tin-tuc/([0-9]*)/			?act=tin_tuc&page=$1 [L]
+RewriteRule ^tin-tuc/					?act=tin_tuc [L]
+
+RewriteRule ^su-kien-xem/(.*)					    ?act=su_kien_xem&id=$1 [L]
+RewriteRule ^su-kien-xem/					    	?act=su_kien_xem [L]
+
+RewriteRule ^su-kien/([0-9]*)/			?act=su_kien&page=$1 [L]
+RewriteRule ^su-kien/					?act=su_kien [L]
+
+RewriteRule ^chi-tiet-phong/(.*)				    		?act=project_view&id=$1 [L]
+RewriteRule ^chi-tiet-phong/					    			?act=project_view [L]
+
+RewriteRule ^danh-muc-phong/([0-9]*)/					?act=project&page=$1 [L]
+RewriteRule ^danh-muc-phong/					    			?act=project [L]
+###Start Kloxo PHP config Area
+###Please Don't edit these comments or the content in between. kloxo uses this to recognize the lines it writes to the the file. If the above line is corrupted, it may fail to recognize them, leading to multiple lines.
+
+<Ifmodule mod_php4.c>
+	php_value error_log "/home/mercurykaraoke.tinhve.biz/__processed_stats/mercurykaraoke.tinhve.biz.phplog"
+	php_value upload_max_filesize 2M
+	php_value max_execution_time  30
+	php_value max_input_time  60
+	php_value memory_limit  32M
+	php_value post_max_size  8M
+	php_flag register_globals  off
+	php_flag display_errors  off
+	php_flag file_uploads  on
+	php_flag log_errors  off
+	php_flag output_buffering  off
+	php_flag register_argc_argv  on
+	php_flag magic_quotes_gpc   off
+	php_flag magic_quotes_runtime  off
+	php_flag magic_quotes_sybase  off
+	php_flag mysql.allow_persistent  off
+	php_flag register_long_arrays  on
+	php_flag allow_url_fopen  on
+	php_flag cgi.force_redirect  on
+	php_flag enable_dl  on
+</Ifmodule>
+
+<Ifmodule mod_php5.c>
+	php_value error_log "/home/mercurykaraoke.tinhve.biz/__processed_stats/mercurykaraoke.tinhve.biz.phplog"
+	php_value upload_max_filesize 2M
+	php_value max_execution_time  30
+	php_value max_input_time  60
+	php_value memory_limit  32M
+	php_value post_max_size  8M
+	php_flag register_globals  off
+	php_flag display_errors  off
+	php_flag file_uploads  on
+	php_flag log_errors  off
+	php_flag output_buffering  off
+	php_flag register_argc_argv  on
+	php_flag magic_quotes_gpc   off
+	php_flag magic_quotes_runtime  off
+	php_flag magic_quotes_sybase  off
+	php_flag mysql.allow_persistent  off
+	php_flag register_long_arrays  on
+	php_flag allow_url_fopen  on
+	php_flag cgi.force_redirect  on
+	php_flag enable_dl  on
+</Ifmodule>
+
+###End Kloxo PHP config Area
+
